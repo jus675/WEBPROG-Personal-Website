@@ -1,13 +1,35 @@
-body {
-  background-color: lightblue;
-}
 
-h1 {
-  color: white;
+body {
+  background-color: #0059b3;
+  font-family: verdana;
+  font-size: 14px;
+  color: whitesmoke;
   text-align: center;
 }
 
-p {
-  font-family: verdana;
-  font-size: 20px;
+h1 {
+  text-align: center;
+  font-size: 22px;
+  color: #6495ED;
+}
+
+h2{ 
+  color: #fdc0ce;
+}
+
+table {
+  border: 1px solid whitesmoke;  
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 5px;
+  text-align: center;
+  border-right: solid 1px whitesmoke; 
+  border-left: solid 1px whitesmoke;
+}
+
+table.center {
+  margin-left: auto; 
+  margin-right: auto;
 }

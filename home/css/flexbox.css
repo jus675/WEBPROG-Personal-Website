@@ -2,6 +2,9 @@
     display: flex;
     flex-wrap: wrap;
     background-color: DodgerBlue;
+    justify-content: space-around;
+    padding: 10px; /* Adds spacing inside the container */
+    gap: 20px; /* Adds spacing between elements */
   }
    
   .flex-container > div {
@@ -11,4 +14,22 @@
     text-align: center;
     line-height: 75px;
     font-size: 30px;
+  }
+
+  .flex-container h1, .flex-container h2 {
+    font-size: 1.2rem; /* Scales down headings for smaller screens */
+    margin-bottom: 10px;
+  }
+  
+  .flex-container h1 {
+    font-size: 1.5rem; /* Larger for primary headings */
+  }
+  
+  .flex-container ul, .flex-container ol {
+    padding-left: 20px;
+  }
+  
+  .flex-container li {
+    margin-bottom: 8px;
+    font-size: 0.9rem; /* Reduce font size for lists */
   }

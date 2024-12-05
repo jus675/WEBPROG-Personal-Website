@@ -2,17 +2,19 @@
     display: flex;
     flex-wrap: wrap;
     background-color: DodgerBlue;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 10px; /* Adds spacing inside the container */
     gap: 20px; /* Adds spacing between elements */
   }
    
   .flex-container > div {
     background-color: #f1f1f1;
-    width: 300px;
-    margin: 10px;
+    width: calc(33.33% - 40px);
+    max-width: 1200px;
+    margin: 0 auto;
     text-align: center;
     line-height: 50px;
     font-size: 15px;
+    box-sizing: border-box;
   }
 

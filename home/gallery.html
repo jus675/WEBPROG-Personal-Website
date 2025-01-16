@@ -33,14 +33,6 @@
         </nav>
     </header>
 
-    <div id="gallery-app">
-        <h2 class="picture-gallery">Picture Gallery</h2>
-        <div class="gallery-container">
-            <div v-for="image in images" :key="image.id" class="gallery-item">
-                <img :src="image.src" :alt="image.alt" :style="{ width: image.width, height: image.height }" />
-            </div>
-        </div>
-    </div>
     
     <h2 class="picture-gallery">Picture Gallery</h2>
     <div class="gallery-container">

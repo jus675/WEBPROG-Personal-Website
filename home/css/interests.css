@@ -1,0 +1,58 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* General Section Styles */
+.content-section {
+    padding: 50px 20px;
+    margin: 5px 0;
+    background-image: url(../images/assets/dark-blue-banner.jpg);
+    background-size: 100% 100%;                           
+    background-position: center;                          
+    background-repeat: no-repeat;                         
+    background-attachment: fixed;     
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    color:whitesmoke;
+    text-shadow: 2px 2px 5px rgb(63, 44, 207);  /* Creates a glowing effect around the text */
+    font-size: 30px;
+    text-align: center;
+}
+
+.media h3 {
+    text-shadow: 3px 3px 6px rgb(63, 44, 207); 
+    font-size: 16px;
+    margin-top: 10px;
+    color: whitesmoke;
+}
+
+/* Favorite Media Styles */
+.media-container {
+    display: grid;
+    margin: 50px;
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-content: center;
+    
+}
+
+.media {
+    cursor: pointer;
+    text-align: center;
+}
+
+.media:hover {
+    opacity: 0.8;
+    transform: scale(0.9);
+    transition: all 0.2s ease;
+}
+
+.media > a > img {
+    width: 173px;
+    height: 256px;
+    border-radius: 5px;
+}
+

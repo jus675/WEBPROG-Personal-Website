@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="css/mystyle.css?version=0.2">
+    <link rel="stylesheet" href="css/gallery.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="myscript.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <ul class="nav-bar">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+                <li>
+                    <a href="interests.html">Interests</a>
+                </li>
+                <li>
+                    <a href="gallery.html">Gallery</a>
+                </li>
+                <li>
+                    <a href="resources.html">Resources</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="gallery-app">
+        <h2 class="picture-gallery">Picture Gallery</h2>
+        <div class="gallery-container">
+            <div v-for="image in images" :key="image.id" class="gallery-item">
+                <img :src="image.src" :alt="image.alt" :style="{ width: image.width, height: image.height }" />
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        new Vue({
+            el: '#gallery-app',
+            data: {
+                images: [
+                    { id: 1, src: "images/gallery/picture-gallery-1.jpg", alt: "Picture-Gallery-1", width: "300px", height: "400px" },
+                    { id: 2, src: "images/gallery/picture-gallery-2.jpg", alt: "Picture-Gallery-2", width: "550px", height: "400px" },
+                    { id: 3, src: "images/gallery/picture-gallery-3.jpg", alt: "Picture-Gallery-3", width: "550px", height: "400px" },
+                    { id: 4, src: "images/gallery/picture-gallery-5.jpg", alt: "Picture-Gallery-5", width: "600px", height: "400px" },
+                    { id: 5, src: "images/gallery/picture-gallery-4.jpg", alt: "Picture-Gallery-4", width: "300px", height: "500px" },
+                    { id: 6, src: "images/gallery/picture-gallery-6.jpg", alt: "Picture-Gallery-6", width: "450px", height: "500px" }
+                ]
+            }
+        });
+    </script>
+    
+
+       
+        
+        
+        
+        
+        
+</body>

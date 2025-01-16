@@ -1,35 +1,165 @@
+/* Universal reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Styles */
 body {
-    background-color: lightsteelblue
+  background-color: whitesmoke;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 14px;
+  color: whitesmoke;
+  text-align: center;
+  /* overflow: hidden;  Hide scrollbars */
+  background-image: url(../images/assets/dark-blue-banner.jpg);
+  background-size: 100% 100%;                           /* To ensure that the image covers the section without distortion */
+  background-position: center;                          /* Centers the image */
+  background-repeat: no-repeat;                         /* Prevents the image from repeating */
+  background-attachment: fixed;                         /* I think this fixes the cover image situation */
+  }
+
+/* Navigation Bar */
+header {
+  padding: 20px;                                        /* Border inside the header */
+  height: 60px;                                         /* Height of header */
+  font-size: 15px;
+  font-family:'Times New Roman', Times, serif;
+  background-size: cover;
+  background-attachment: fixed;
+  /* background-image: linear-gradient() */
+  
 }
 
-img {
-    padding: 8px solid black;
-    border: 10px solid darkblue;
-    position: center;
+header nav {
+  display: flex;                                       /* Impacts the alignment of the nav-links too */
+  align-items: center;
+  justify-content: center;                             /* Centers the navigation links */
 }
 
-.tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black;
+.nav-bar {
+  list-style: none;                                    /* Removes the bullet points */
+  display: flex;                                       /* Spreads the links more rather than a list / https://developer.mozilla.org/en-US/docs/Web/CSS/flex */
+  gap: 20px;                                           /* Gap between the navigation links */
+}
+
+/* Default Link Style */
+.nav-bar a {
+  color:#6495ED;
+  text-decoration: none;                               /* Removes the underline on the anchor tags */
+  font-size: 15px;
+  font-weight: bold;
+  transition: color 0.15s ease, font-size 0.15s ease, transform 0.15s ease;
+}
+
+/* Mouse Over Link */
+.nav-bar a:hover {
+    color: pink;
+    font-size: 17px;
+}
+
+/* Click on Link */
+.nav-bar a:active {
+  color: #1153ce;
+}
+
+
+/* HERO SECTION */
+.hero {
+  display: flex;                                      /* Keep it as flex for potential alignment tweaks */
+  position: relative;                                 /* Allows "child elements" to be positioned relative to this container */
+  width: 100%;                                        /* Full width of the viewport */
+  height: 600px;                                      /* Full height of the viewport */
+  overflow: hidden;                                   /* Anything outside the section is hidden */
+  display: flex;                                      /* Aligns content using flexbox */
+  align-items: center;                                /* Vertically centers the content */
+  justify-content: center;                            /* Horizontally centers the content */
+  text-align: center;                                 /* Centers the text inside the hero */
+  border-bottom: 1px solid #6495ED;
+  flex-direction: column;
+  color: #003daf;
+  margin-bottom: 10px;
+}
+
+.hero-background {
+  position: absolute;                                 /* Allows "this element" to be positioned anywhere relative to the hero container */
+  top: 0;                                             /* Aligns the background to the top of the section */
+  left: 0;                                            /* Aligns the background to the left of the section */
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #0a2a43, #054c93); 
+  background-image: url(../images/assets/cloud-08.png);
+  /* background-size                                 /* Ensures the background image stretches to cover the entire area */
+  background-repeat: no-repeat;                      /* Prevents the background image from repeating */
+  background-position: center;                       /* Centers the image in the container */
+  z-index: -1;                                       /* Pushes the background behind the main content */
+  animation: cloud-move 40s linear infinite;         /* Animates the background clouds */
+}
+
+@keyframes cloud-move {
+  from {
+      background-position: 10 0;                     /* Starting position of the background */
   }
-  
-  .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
-    top: -5px;
-    left: 105%;
+  to {
+      background-position: -300px 0;                 /* Moves the background 200px horizontally */
   }
-  
-  .tooltip:hover .tooltiptext {
-    visibility: visible;
-  }
+}
+
+.hero-title {
+  position: relative;
+  /*
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the text perfectly */
+  font-size: 4rem;
+  font-weight: bold;
+  color: #003daf;
+  text-align: center;
+  display: inline-block;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);     /* Creates the glowing effect around the text */
+  cursor: default;                                   /* Prevents the text from being selectable */
+}
+
+.hero-subtitle {
+  font-size: 15px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+  margin-bottom: 1rem;                              /* Adds space between the subtitle and button */
+}
+
+.hero-icon {
+	transform: rotateY(45deg);                        /* Applies the spinning effect */
+	animation: rotateAnimation 2s linear infinite;    /* Keeps the icon spinning */
+  position: relative;                               /* Makes it the positioning context for the tooltip */
+}
+
+@keyframes rotateAnimation {
+	from {transform: rotateY(45deg);}
+	to {transform: rotateY(225deg);}
+}
+
+.hero-icon .hero-tooltip {
+  visibility: hidden;                              /* Tooltip is hidden by default */
+  background-color: #003daf;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;                              /* Rounds the corners */
+  padding: 5px 0;                                  /* Adds padding around the tooltip text */
+
+  /* Position the tooltip */
+  position: absolute;
+  bottom: 120%;                                    /* Places the tooltip above the icon */
+  left: 50%;                                       /* Centers the tooltip horizontally */
+  transform: translateX(-50%);                     /* Adjusts horizontal alignment */
+  z-index: 1;
+ 
+}
+
+.hero-icon:hover .hero-tooltip {
+  visibility: visible;
+}
+
+
+
+/* GUESTBOOK */
+

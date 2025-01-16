@@ -1,0 +1,104 @@
+/* ABOUT.HTML */
+
+header {
+    margin-bottom: 1em;                  /* So there's space with the border and About Me */
+}
+
+h2 {
+    color:whitesmoke;
+    text-shadow: 2px 2px 5px rgb(63, 44, 207);  /* Creates a glowing effect around the text */
+    font-size: 30px;
+}
+
+.about-me-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;     /* Flexible grid with ratio for the columns: profile and text */
+    align-items: center;                /* To align items vertically in the center */
+    gap: 20px;                          /* To add spacing between the profile and text */
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 0 20px;                      /* Add padding to the container */
+
+}
+
+.about-me-profile-02 {
+    grid-column: 1;                     /* To place the image in the first column */
+    width: 90%;                         /* To make image width responsive: percentage */
+    max-width: 270px;                   /* To limit the maximum width */
+
+    border:#6495ED solid;
+    border-radius: 10px;
+    margin: 0 auto;                     /* Center the image */
+}   
+
+div .about-me-text {
+    grid-column: 2;   
+    line-height: 1.6;
+    color: #eaeaea;
+    max-width: 500px;                   /* Limit text width for better readability */
+}
+
+/* Education Section */
+.education {
+    margin: 50px 0;
+}
+
+.education h2 {
+    margin-bottom: 30px;
+}
+
+/* School Container */
+.school-container {
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* School Images */
+.school img {
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.school a{
+    display: inline-block;
+    cursor: pointer;                      /* Shows a pointer on hover */
+    text-decoration: none;
+}
+
+.school a:hover img {
+    transform: scale(1.1);
+}
+
+/* Tooltip */
+.school a[title] {
+    position: relative;
+}
+
+.school a[title]:hover::after {
+    content: attr(title);                /* Displays the 'title' attribute on hover */
+    position: absolute;
+    top: -30px;                          /* Adjust to position above the image */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #003daf;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 10;
+    opacity: 0.9;
+    visibility: hidden; 
+    transition: opacity 0.5s ease, visibility 0.5s ease; 
+    
+}
+
+/* When Hovering, Show Tooltip */
+.school a[title]:hover::after {
+    opacity: 0.9;                       /* Fully visible */
+    visibility: visible;                /* Makes the tooltip "appear" */
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justine's Ether</title>
+    <link rel="stylesheet" href="css/mystyle.css?version=0.2">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="resources.css">
+    <!-- Load Vue.js before custom script -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-bar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="interests.html">Interests</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2 class="resources-title">Resources</h2>
+    <ul class="resources-list">
+        <li><a href="https://ph.pinterest.com/i_mahman/dark-blue-vibes/" target="_blank">https://ph.pinterest.com/i_mahman/dark-blue-vibes/</a></li>
+        <li><a href="https://resourceboy.com/textures/cloud-textures/" target="_blank">https://resourceboy.com/textures/cloud-textures/</a></li>
+    </ul>
+    <br>
+
+    <!-- Guestbook App Section -->
+    <div id="guestbook-app">
+        <!-- Title for the Guestbook Form -->
+        <h2 class="guestbook-title">Guestbook</h2>
+        
+        <!-- Guestbook Form -->
+        <form @submit.prevent="addMessage" class="guestbook-form">
+            <!-- Name Input Field -->
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" v-model="newMessage.name" placeholder="Your Name" required class="form-input" />
+            </div>
+            
+            <!-- Message Input Field -->
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" v-model="newMessage.message" placeholder="Your Message" required class="form-textarea"></textarea>
+            </div>
+            
+            <!-- Submit Button -->
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+        
+        <!-- Display the List of Messages -->
+        <div v-if="messages.length" class="message-list">
+            <h3 class="message-title">Messages</h3>
+            <ul>
+                <!-- Loop through each message and display it -->
+                <li v-for="(message, index) in messages" :key="index" class="message-item">
+                    <strong>{{ message.name }}</strong>: 
+                    <p>{{ message.message }}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Load your custom script after Vue.js -->
+    <script src="myscript.js"></script>
+</body>
+</html>

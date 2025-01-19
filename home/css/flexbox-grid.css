@@ -7,9 +7,9 @@
     display: grid;
     grid-template-areas:
         'header header header header header header'
-        'menu main main main main right'
-        'menu main main main main right'
-        'menu footer footer footer footer footer';
+        'main main main main main right'
+        'main main main main main right'
+        'footer footer footer footer footer footer';
     gap: 10px;
     background-color: #2196F3;
     padding: 10px;

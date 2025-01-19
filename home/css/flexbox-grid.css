@@ -1,0 +1,33 @@
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+  }
+  
+  header, footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .main-content {
+    flex: 2;
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  
+  }
+
+  .main-content > div {
+    background-color: #f1f1f1;
+    width: 300px;
+    margin: 10px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 15px;
+  }
